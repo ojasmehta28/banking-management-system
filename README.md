@@ -44,3 +44,19 @@ Before running this application, make sure you have:
 ```bash
 git clone https://github.com/ojasmehta28/banking-management-system.git
 cd banking-management-system
+
+2. Database Setup
+sql-- Connect to MySQL and run:
+mysql -u root -p < database/schema.sql
+mysql -u root -p < database/sample_data.sql
+3. Configure Database Connection
+Update the database credentials in BankingSystem.java:
+javaprivate static final String DB_URL = "jdbc:mysql://localhost:3306/banking_system";
+private static final String DB_USER = "your_username";
+private static final String DB_PASSWORD = "your_password";
+4. Add MySQL Connector
+Download and add mysql-connector-java-8.0.33.jar to your classpath.
+5. Compile and Run
+bashjavac -cp ".:mysql-connector-java-8.0.33.jar" BankingSystem.java
+java -cp ".:mysql-connector-java-8.0.33.jar" BankingSystem
+
